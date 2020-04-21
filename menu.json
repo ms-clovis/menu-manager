@@ -1,0 +1,148 @@
+{
+  "menuItems": [
+    {
+      "id": 1,
+      "category": "Soups & Salads",
+      "name": "Home Made Chili",
+      "price": 4.5
+    },
+    {
+      "id": 2,
+      "category": "Soups & Salads",
+      "name": "Home Made French Onion Soup",
+      "price": 4.5
+    },
+    {
+      "category": "Soups & Salads",
+      "name": "House Salad",
+      "price": 3.99,
+      "id": 7
+    },
+    {
+      "category": "Soups & Salads",
+      "name": "Chef Salad",
+      "price": 7.99,
+      "id": 8
+    },
+    {
+      "category": "Soups & Salads",
+      "name": "Tuna Salad Platter",
+      "price": 6.99,
+      "id": 9
+    },
+    {
+      "category": "Hot and Cold Sandwiches",
+      "name": "Tuna Salad Sandwich",
+      "price": 4.99,
+      "id": 10
+    },
+    {
+      "category": "Hot and Cold Sandwiches",
+      "name": "Egg Salad Sandwhich",
+      "price": 4.5,
+      "id": 11
+    },
+    {
+      "category": "Hot and Cold Sandwiches",
+      "name": "Chicken Salad Sandwich",
+      "price": 4.99,
+      "id": 12
+    },
+    {
+      "category": "Hot and Cold Sandwiches",
+      "name": "Grilled Cheese",
+      "price": 3.99,
+      "id": 13
+    },
+    {
+      "category": "Hot and Cold Sandwiches",
+      "name": "Grilled Ham & Cheese",
+      "price": 5.5,
+      "id": 14
+    },
+    {
+      "category": "Wraps",
+      "name": "Chicken Caesar Wrap ",
+      "price": 6.99,
+      "id": 15
+    },
+    {
+      "category": "Wraps",
+      "name": "Buffalo Chicken Wrap",
+      "price": 6.99,
+      "id": 16
+    },
+    {
+      "category": "Wraps",
+      "name": "Chicken Parm Wrap",
+      "price": 6.99,
+      "id": 17
+    },
+    {
+      "category": "Wraps",
+      "name": "Trum Wrap",
+      "price": 7.5,
+      "id": 18
+    },
+    {
+      "category": "Wraps",
+      "name": "Cheeseburger Hoagie Wrap",
+      "price": 6.5,
+      "id": 19
+    },
+    {
+      "name": "Chicken Salad BLT Wrap",
+      "category": "Wraps",
+      "price": 6.99,
+      "id": 20
+    },
+    {
+      "category": "Wraps",
+      "name": "Mexican Wrap",
+      "price": 6.99,
+      "id": 21
+    },
+    {
+      "category": "Buffalo Wings",
+      "name": "One LB.",
+      "price": 8.49,
+      "id": 22
+    },
+    {
+      "category": "Buffalo Wings",
+      "name": "Three LBs.",
+      "price": 22.99,
+      "id": 23
+    },
+    {
+      "category": "Buffalo Wings",
+      "name": "Five LBs.",
+      "price": 36.99,
+      "id": 24
+    },
+    {
+      "category": "Buffalo Wings",
+      "name": "Ten LBs.",
+      "price": 72.99,
+      "id": 25
+    },
+    {
+      "category": "Half LB. Burger",
+      "name": "CheeseBurger",
+      "price": 5.5,
+      "id": 26
+    },
+    {
+      "category": "Half LB. Burger",
+      "name": "California CheeseBurger",
+      "price": 6.25,
+      "id": 27
+    },
+    {
+      "category": "Half LB. Burger",
+      "name": "Western CheeseBurger",
+      "price": 6.25,
+      "id": 28
+    }
+  ]
+}
