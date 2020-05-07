@@ -2,147 +2,651 @@
   "menuItems": [
     {
       "id": 1,
-      "category": "Soups & Salads",
+      "category": {
+        "id": 1,
+        "name": "Soups & Salads"
+      },
       "name": "Home Made Chili",
       "price": 4.5
     },
     {
       "id": 2,
-      "category": "Soups & Salads",
+      "category": {
+        "id": 1,
+        "name": "Soups & Salads"
+      },
       "name": "Home Made French Onion Soup",
       "price": 4.5
     },
     {
-      "category": "Soups & Salads",
+      "category": {
+        "id": 1,
+        "name": "Soups & Salads"
+      },
       "name": "House Salad",
       "price": 3.99,
       "id": 7
     },
     {
-      "category": "Soups & Salads",
+      "category": {
+        "id": 1,
+        "name": "Soups & Salads"
+      },
       "name": "Chef Salad",
       "price": 7.99,
       "id": 8
     },
     {
-      "category": "Soups & Salads",
+      "category": {
+        "id": 1,
+        "name": "Soups & Salads"
+      },
       "name": "Tuna Salad Platter",
       "price": 6.99,
       "id": 9
     },
     {
-      "category": "Hot and Cold Sandwiches",
+      "category": {
+        "id": 2,
+        "name": "Hot and Cold Sandwiches"
+      },
       "name": "Tuna Salad Sandwich",
       "price": 4.99,
       "id": 10
     },
     {
-      "category": "Hot and Cold Sandwiches",
-      "name": "Egg Salad Sandwhich",
+      "category": {
+        "id": 2,
+        "name": "Hot and Cold Sandwiches"
+      },
+      "name": "Egg Salad Sandwich",
       "price": 4.5,
       "id": 11
     },
     {
-      "category": "Hot and Cold Sandwiches",
+      "category": {
+        "id": 2,
+        "name": "Hot and Cold Sandwiches"
+      },
       "name": "Chicken Salad Sandwich",
       "price": 4.99,
       "id": 12
     },
     {
-      "category": "Hot and Cold Sandwiches",
+      "category": {
+        "id": 2,
+        "name": "Hot and Cold Sandwiches"
+      },
       "name": "Grilled Cheese",
       "price": 3.99,
       "id": 13
     },
     {
-      "category": "Hot and Cold Sandwiches",
+      "category": {
+        "id": 2,
+        "name": "Hot and Cold Sandwiches"
+      },
       "name": "Grilled Ham & Cheese",
       "price": 5.5,
       "id": 14
     },
     {
-      "category": "Wraps",
+      "category": {
+        "id": 3,
+        "name": "Wraps"
+      },
       "name": "Chicken Caesar Wrap ",
       "price": 6.99,
       "id": 15
     },
     {
-      "category": "Wraps",
+      "category": {
+        "id": 3,
+        "name": "Wraps"
+      },
       "name": "Buffalo Chicken Wrap",
       "price": 6.99,
       "id": 16
     },
     {
-      "category": "Wraps",
+      "category": {
+        "id": 3,
+        "name": "Wraps"
+      },
       "name": "Chicken Parm Wrap",
       "price": 6.99,
       "id": 17
     },
     {
-      "category": "Wraps",
+      "category": {
+        "id": 3,
+        "name": "Wraps"
+      },
       "name": "Trum Wrap",
       "price": 7.5,
       "id": 18
     },
     {
-      "category": "Wraps",
+      "category": {
+        "id": 3,
+        "name": "Wraps"
+      },
       "name": "Cheeseburger Hoagie Wrap",
       "price": 6.5,
       "id": 19
     },
     {
       "name": "Chicken Salad BLT Wrap",
-      "category": "Wraps",
+      "category": {
+        "id": 3,
+        "name": "Wraps"
+      },
       "price": 6.99,
       "id": 20
     },
     {
-      "category": "Wraps",
+      "category": {
+        "id": 3,
+        "name": "Wraps"
+      },
       "name": "Mexican Wrap",
       "price": 6.99,
       "id": 21
     },
     {
-      "category": "Buffalo Wings",
+      "category": {
+        "id": 4,
+        "name": "Buffalo Wings"
+      },
       "name": "One LB.",
       "price": 8.49,
       "id": 22
     },
     {
-      "category": "Buffalo Wings",
+      "category": {
+        "id": 4,
+        "name": "Buffalo Wings"
+      },
       "name": "Three LBs.",
       "price": 22.99,
       "id": 23
     },
     {
-      "category": "Buffalo Wings",
+      "category": {
+        "id": 4,
+        "name": "Buffalo Wings"
+      },
       "name": "Five LBs.",
       "price": 36.99,
       "id": 24
     },
     {
-      "category": "Buffalo Wings",
+      "category": {
+        "id": 4,
+        "name": "Buffalo Wings"
+      },
       "name": "Ten LBs.",
       "price": 72.99,
       "id": 25
     },
     {
-      "category": "Half LB. Burger",
+      "category": {
+        "id": 5,
+        "name": "Half LB. Burger"
+      },
       "name": "CheeseBurger",
       "price": 5.5,
       "id": 26
     },
     {
-      "category": "Half LB. Burger",
+      "category": {
+        "id": 5,
+        "name": "Half LB. Burger"
+      },
       "name": "California CheeseBurger",
       "price": 6.25,
       "id": 27
     },
     {
-      "category": "Half LB. Burger",
+      "category": {
+        "id": 5,
+        "name": "Half LB. Burger"
+      },
       "name": "Western CheeseBurger",
       "price": 6.25,
       "id": 28
+    },
+    {
+      "category": {
+        "id": 5,
+        "name": "Half LB. Burger"
+      },
+      "name": "3-Cheese CheeseBurger",
+      "price": 5.99,
+      "id": 29
+    },
+    {
+      "category": {
+        "id": 5,
+        "name": "Half LB. Burger"
+      },
+      "name": "Mushroom Swiss CheeseBurger",
+      "price": 5.99,
+      "id": 30
+    },
+    {
+      "category": {
+        "id": 5,
+        "name": "Half LB. Burger"
+      },
+      "name": "Southwest CheeseBurger",
+      "price": 5.99,
+      "id": 31
+    },
+    {
+      "category": {
+        "id": 5,
+        "name": "Half LB. Burger"
+      },
+      "name": "One Pound DoubleDecker Pub Burger",
+      "price": 8.99,
+      "id": 32
+    },
+    {
+      "category": {
+        "id": 6,
+        "name": "Half LB. Philly CheeseSteaks"
+      },
+      "name": "CheeseSteak",
+      "price": 6.99,
+      "id": 33
+    },
+    {
+      "category": {
+        "id": 6,
+        "name": "Half LB. Philly CheeseSteaks"
+      },
+      "name": "Weber",
+      "price": 7.5,
+      "id": 34
+    },
+    {
+      "category": {
+        "id": 6,
+        "name": "Half LB. Philly CheeseSteaks"
+      },
+      "name": "Trum Signature CheeseSteak",
+      "price": 7.99,
+      "id": 35
+    },
+    {
+      "category": {
+        "id": 6,
+        "name": "Half LB. Philly CheeseSteaks"
+      },
+      "name": "Pepperoni Pizza CheeseSteak",
+      "price": 7.99,
+      "id": 36
+    },
+    {
+      "category": {
+        "id": 6,
+        "name": "Half LB. Philly CheeseSteaks"
+      },
+      "name": "Mushroom Cheddar CheeseSteak ",
+      "price": 7.5,
+      "id": 37
+    },
+    {
+      "category": {
+        "id": 7,
+        "name": "Half LB. Chicken Breast Sandwiches"
+      },
+      "name": "Grilled Chicken Sandwich",
+      "price": 5.5,
+      "id": 70
+    },
+    {
+      "category": {
+        "id": 7,
+        "name": "Half LB. Chicken Breast Sandwiches"
+      },
+      "name": "Cajun Chicken Sandwich",
+      "price": 5.99,
+      "id": 71
+    },
+    {
+      "category": {
+        "id": 7,
+        "name": "Half LB. Chicken Breast Sandwiches"
+      },
+      "name": "Buffalo Chicken Sandwich",
+      "price": 5.99,
+      "id": 71
+    },
+    {
+      "category": {
+        "id": 7,
+        "name": "Half LB. Chicken Breast Sandwiches"
+      },
+      "name": "Chicken Supreme",
+      "price": 6.5,
+      "id": 72
+    },
+    {
+      "category": {
+        "id": 7,
+        "name": "Half LB. Chicken Breast Sandwiches"
+      },
+      "name": "Barbecue Chicken Sandwich",
+      "price": 5.99,
+      "id": 73
+    },
+    {
+      "category": {
+        "id": 7,
+        "name": "Half LB. Chicken Breast Sandwiches"
+      },
+      "name": "Chicken Cordon Blue Sandwich",
+      "price": 6.5,
+      "id": 74
+    },
+    {
+      "category": {
+        "id": 7,
+        "name": "Half LB. Chicken Breast Sandwiches"
+      },
+      "name": "Grilled Parm Sandwich",
+      "price": 5.99,
+      "id": 75
+    },
+    {
+      "category": {
+        "id": 6,
+        "name": "Half LB. Philly CheeseSteaks"
+      },
+      "name": "Royal CheeseSteak",
+      "price": 7.5,
+      "id": 38
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Jalapeno Poppers ",
+      "price": 4.5,
+      "id": 39
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Mozzarella Sticks ",
+      "price": 4.99,
+      "id": 40
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Crabbettes ",
+      "price": 4.99,
+      "id": 41
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Broccoli Cheese Bites ",
+      "price": 4.5,
+      "id": 42
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Chicken Fingers",
+      "price": 5.99,
+      "id": 43
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Pierogies ",
+      "price": 4.3,
+      "id": 44
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Italian Pierogies ",
+      "price": 4.8,
+      "id": 45
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Loaded Pierogies",
+      "price": 5.5,
+      "id": 46
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Trum Pierogies",
+      "price": 4.8,
+      "id": 47
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Potato Skins",
+      "price": 5.99,
+      "id": 48
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "Appetizers"
+      },
+      "name": "Nacho Grande",
+      "price": 7.99,
+      "id": 49
+    },
+    {
+      "category": {
+        "id": 9,
+        "name": "Sides"
+      },
+      "name": "Basket of Fries",
+      "price": 3.5,
+      "id": 50
+    },
+    {
+      "category": {
+        "id": 9,
+        "name": "Sides"
+      },
+      "name": "Small Fries",
+      "price": 2.5,
+      "id": 51
+    },
+    {
+      "category": {
+        "id": 9,
+        "name": "Sides"
+      },
+      "name": "Hand Cut Fries",
+      "price": 2.5,
+      "id": 52
+    },
+    {
+      "category": {
+        "id": 9,
+        "name": "Sides"
+      },
+      "name": "Trum Super Fries",
+      "price": 4.99,
+      "id": 53
+    },
+    {
+      "category": {
+        "id": 9,
+        "name": "Sides"
+      },
+      "name": "Mexican Fries",
+      "price": 4.5,
+      "id": 54
+    },
+    {
+      "category": {
+        "id": 9,
+        "name": "Sides"
+      },
+      "name": "Onion Rings",
+      "price": 3.99,
+      "id": 55
+    },
+    {
+      "category": {
+        "id": 9,
+        "name": "Sides"
+      },
+      "name": "Cole Slaw",
+      "price": 1.99,
+      "id": 56
+    },
+    {
+      "category": {
+        "id": 9,
+        "name": "Sides"
+      },
+      "name": "Baked Potato",
+      "price": 2.5,
+      "id": 57
+    },
+    {
+      "category": {
+        "id": 10,
+        "name": "Hoagies"
+      },
+      "name": "Three Cheese Hoagie",
+      "price": 5.5,
+      "id": 58
+    },
+    {
+      "category": {
+        "id": 10,
+        "name": "Hoagies"
+      },
+      "name": "Ham & Cheese",
+      "price": 5.99,
+      "id": 59
+    },
+    {
+      "category": {
+        "id": 10,
+        "name": "Hoagies"
+      },
+      "name": "Italian Hoagie",
+      "price": 5.99,
+      "id": 60
+    },
+    {
+      "category": {
+        "id": 10,
+        "name": "Hoagies"
+      },
+      "name": "Turkey & Cheese",
+      "price": 5.99,
+      "id": 61
+    },
+    {
+      "category": {
+        "id": 10,
+        "name": "Hoagies"
+      },
+      "name": "Roast Beef & Cheese",
+      "price": 6.99,
+      "id": 62
+    },
+    {
+      "category": {
+        "id": 10,
+        "name": "Hoagies"
+      },
+      "name": "Ham or Turkey Club",
+      "price": 6.99,
+      "id": 63
+    },
+    {
+      "category": {
+        "id": 10,
+        "name": "Hoagies"
+      },
+      "name": "Roast Beef Club",
+      "price": 7.99,
+      "id": 64
+    },
+    {
+      "category": {
+        "id": 11,
+        "name": "Platters"
+      },
+      "name": "Meatloaf",
+      "price": 8.99,
+      "id": 65
+    },
+    {
+      "category": {
+        "id": 11,
+        "name": "Platters"
+      },
+      "name": "French Dip",
+      "price": 8.99,
+      "id": 66
+    },
+    {
+      "category": {
+        "id": 11,
+        "name": "Platters"
+      },
+      "name": "Chicken Fingers",
+      "price": 7.99,
+      "id": 67
+    },
+    {
+      "category": {
+        "id": 11,
+        "name": "Platters"
+      },
+      "name": "Country Fried Chicken",
+      "price": 8.99,
+      "id": 68
+    },
+    {
+      "category": {
+        "id": 11,
+        "name": "Platters"
+      },
+      "name": "Fish & Chips",
+      "price": 7.99,
+      "id": 69
     }
   ]
 }

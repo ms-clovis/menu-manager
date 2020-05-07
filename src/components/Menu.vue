@@ -1,14 +1,22 @@
 <template>
   <div id="menu" class="container">
+    <div class="vld-parent">
+      <loading
+        :active.sync="isLoading"
+        :can-cancel="true"
+        :is-full-page="true"
+        color="#000"
+      ></loading>
+    </div>
     <div class="row">
       <h1 class="col-12" style="text-align: center" @click="swapIsAdmin">
-        Trum Menu
+        Trum Tavern Menu
       </h1>
     </div>
-
     <div class="row">
-      <div class="category col-12" v-for="cat in categories" :key="cat">
-        {{ cat }}
+      <div class="category col-12" v-for="cat in categories" :key="cat.name">
+        <h2 @click="editCat(cat)">{{ cat.name }}</h2>
+        <h6>{{ cat.description }}</h6>
         <div class="row">
           <Item
             @SelItem="setSelectedItem"
@@ -19,17 +27,29 @@
             :is-admin="isAdmin"
           ></Item>
         </div>
+        <h6>{{ cat.addendum }}</h6>
       </div>
     </div>
     <div class="row" v-if="isAdmin">
       <div class="col-12">
         <label>
           New Category:
-          <input type="text" v-model="catToAdd" placeholder="New Category" />
+          <input type="text" v-model="catToAdd.name" placeholder="Name" />
+          <input
+            type="text"
+            v-model="catToAdd.description"
+            placeholder="Description"
+          />
+          <input
+            type="text"
+            v-model="catToAdd.addendum"
+            placeholder="Addendum"
+          />
         </label>
         <button class="btn btn-primary" @click="addCategory">
-          Add Category
+          {{ addEditCat }} Category
         </button>
+        <button class="btn btn-success" @click="clearCat">Clear</button>
       </div>
     </div>
     <div class="row">
@@ -44,6 +64,13 @@
         ></MenuItemAddEdit>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12">
+        <h2 style="text-align: center">
+          (215) 538-2445
+        </h2>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -52,16 +79,23 @@ import Item from "./Item";
 import MenuService from "../services/MenuService";
 import MenuItemAddEdit from "./MenuItemAddEdit";
 import { MenuItem } from "../models/MenuItem";
+import { StaticMenuService } from "../services/StaticMenuService";
+// eslint-disable-next-line no-unused-vars
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
+import { Category } from "../models/Category";
 export default {
   name: "Menu",
-  components: { MenuItemAddEdit, Item },
+  components: { MenuItemAddEdit, Item, Loading },
   data() {
     return {
+      isLoading: true,
       menuItems: [],
       categories: [],
       isAdmin: false,
       selectedMenuItem: {},
-      catToAdd: ""
+      catToAdd: Category.newCategory(),
+      addEditCat: "Add"
     };
   },
   watch: {
@@ -71,21 +105,83 @@ export default {
     }
   },
   methods: {
+    clearCat() {
+      this.catToAdd = Category.newCategory();
+      this.addEditCat = "Add";
+    },
+    editCat(cat) {
+      this.catToAdd = cat;
+      this.addEditCat = "Edit";
+    },
+    getMenuItemsStatic() {
+      const sms = StaticMenuService.newStaticMenuService("./menu.json");
+      this.isLoading = true;
+      sms
+        .getMenuItems()
+        .then(data => {
+          this.menuItems = data;
+          this.setCategories();
+        })
+        .catch(err => console.log(err));
+      this.isLoading = false;
+    },
+
+    async setMenuItems() {
+      await MenuService.getMenuItems()
+        .then(response => {
+          this.menuItems = response.data;
+          this.setCategories();
+        })
+        .catch(err => {
+          console.log(err);
+          this.getMenuItemsStatic();
+        });
+    },
     addCategory() {
-      if (this.catToAdd && !this.categories.includes(this.catToAdd)) {
-        this.categories.push(this.catToAdd);
-        this.catToAdd = "";
+      if (this.addEditCat === "Add") {
+        let hasCat = this.categories.some(c => {
+          return c.name === this.catToAdd.name;
+        });
+        if (this.catToAdd && !hasCat) {
+          this.categories.push(this.catToAdd);
+          this.catToAdd = "";
+        }
+      } else {
+        let newMenuItems = [...this.menuItems];
+        for (let idx = 0; idx < newMenuItems.length; idx++) {
+          let menuItem = newMenuItems[idx];
+          if (menuItem.category.id === this.catToAdd.id) {
+            menuItem.category = this.catToAdd;
+            MenuService.editMenuItem(menuItem)
+              .then(response => {
+                menuItem = response.data;
+                this.catToAdd = Category.newCategory();
+                this.addEditCat = "Add";
+              })
+              .catch(err => console.log(err));
+          }
+        }
       }
     },
     swapIsAdmin() {
-      this.isAdmin = !this.isAdmin;
+      if (prompt("Enter your password", "password") === "Lewis") {
+        this.isAdmin = !this.isAdmin;
+      }
     },
     addMenuItem(menuItem) {
-      MenuService.saveMenuItem(menuItem)
-        .then(response => {
-          this.menuItems.push(response.data);
-        })
-        .catch(err => console.log(err));
+      let alreadyStored = this.menuItems.some(mi => {
+        return (
+          menuItem.name.toLowerCase() === mi.name.toLowerCase() &&
+          mi.category.name === menuItem.category.name
+        );
+      });
+      if (!alreadyStored) {
+        MenuService.saveMenuItem(menuItem)
+          .then(response => {
+            this.menuItems.push(response.data);
+          })
+          .catch(err => console.log(err));
+      }
     },
     resetMenuItem() {
       this.selectedMenuItem = MenuItem.newMenuItem();
@@ -111,34 +207,40 @@ export default {
 
     filteredMenuItems(category) {
       return this.menuItems.filter(menuItem => {
-        return menuItem.category === category;
+        return menuItem.category.name === category.name;
       });
     },
     setCategories() {
-      //console.log("setCategories ran: " + this.menuItems.length);
-      for (let idx = 0; idx < this.menuItems.length; idx++) {
-        if (!this.categories.includes(this.menuItems[idx].category)) {
-          this.categories.push(this.menuItems[idx].category);
+      // console.log("setCategories ran: " + this.menuItems);
+      if (this.menuItems && this.menuItems.length > 1) {
+        for (let idx = 0; idx < this.menuItems.length; idx++) {
+          let hasCat = this.categories.some(c => {
+            return c.name === this.menuItems[idx].category.name;
+          });
+          if (!hasCat) {
+            this.categories.push(this.menuItems[idx].category);
+          }
         }
       }
     }
   },
-  created() {
-    MenuService.getMenuItems()
-      .then(response => {
-        this.menuItems = response.data;
-      })
-      .catch(err => console.log(err));
-    this.setCategories();
+  async created() {
+    this.isLoading = true;
+    //this.getMenuItemsStatic();
+    await this.setMenuItems();
+    this.isLoading = false;
   }
 };
 </script>
 
 <style scoped>
+@custom-media --viewport-4 (min-width: 480px);
+@custom-media --viewport-7 (min-width: 768px);
+@custom-media --viewport-9 (min-width: 992px);
+@custom-media --viewport-12 (min-width: 1200px);
 #menu {
   //background-image: url("../assets/30426.jpg");
-  background: black url("https://cdn.wallpapersafari.com/63/77/CNFTlh.jpg")
-    repeat fixed center;
+  background: beige url("../../public/backgroundImage.jpg") repeat fixed center;
   color: black;
 }
 .category {

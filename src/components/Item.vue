@@ -11,6 +11,7 @@
         @click="deleteMenuItem"
         v-if="isAdmin"
       ></i>
+      <h6>{{ menuItem.description }}</h6>
     </div>
   </div>
 </template>
@@ -42,7 +43,7 @@ export default {
     fixDashes() {
       let dashes = "-";
       if (this.menuItem.name) {
-        while (dashes.length < 30 - this.menuItem.name.length) {
+        while (dashes.length < 25 - this.menuItem.name.length) {
           dashes += "-";
         }
       }
@@ -63,5 +64,17 @@ export default {
 .menuName,
 .menuPrice {
   font-weight: 900;
+}
+@media (min-width: 1px) {
+  .menuName,
+  .menuPrice {
+    font-size: 0.75em;
+  }
+}
+@media (min-width: 992px) {
+  .menuName,
+  .menuPrice {
+    font-size: 1em;
+  }
 }
 </style>

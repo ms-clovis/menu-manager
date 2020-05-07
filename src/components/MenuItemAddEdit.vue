@@ -9,18 +9,14 @@
         >
           <option value="" selected></option>
           <option :key="idx" v-for="(cat, idx) in categories" :value="cat">
-            {{ cat }}
+            {{ cat.name }}
           </option>
         </select>
       </label>
       &nbsp;
       <label>
         Name:
-        <input
-          type="text"
-          v-model="menuItem.name"
-          placeholder="Menu Item Name"
-        />
+        <input type="text" v-model="menuItem.name" placeholder="Name" />
       </label>
       &nbsp;
       <label>
@@ -28,7 +24,15 @@
         <input
           type="number"
           v-model.number="menuItem.price"
-          placeholder="Menu Item Price"
+          placeholder="Price"
+        />
+      </label>
+      <label
+        >Description:
+        <input
+          type="text"
+          v-model="menuItem.description"
+          placeholder="Description"
         />
       </label>
       <button
