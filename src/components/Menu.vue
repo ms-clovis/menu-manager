@@ -84,6 +84,8 @@ import { StaticMenuService } from "../services/StaticMenuService";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 import { Category } from "../models/Category";
+import moment from "moment";
+import AWSMenuService from "../services/AWSMenuService";
 export default {
   name: "Menu",
   components: { MenuItemAddEdit, Item, Loading },
@@ -120,6 +122,14 @@ export default {
         .getMenuItems()
         .then(data => {
           this.menuItems = data;
+
+          AWSMenuService.saveMenu({ menuItems: this.menuItems })
+            .then(response => {
+              // console.log("AWS data: ");
+              // console.log(response.data.menuItems);
+              this.menuItems = response.data.menuItems;
+            })
+            .catch(err => console.log(err));
           this.setCategories();
         })
         .catch(err => console.log(err));
@@ -130,6 +140,7 @@ export default {
       await MenuService.getMenuItems()
         .then(response => {
           this.menuItems = response.data;
+
           this.setCategories();
         })
         .catch(err => {
@@ -142,8 +153,16 @@ export default {
         let hasCat = this.categories.some(c => {
           return c.name === this.catToAdd.name;
         });
-        if (this.catToAdd && !hasCat) {
+        if (
+          this.catToAdd &&
+          !hasCat &&
+          !this.catToAdd.name.toLowerCase().includes("specials")
+        ) {
           this.categories.push(this.catToAdd);
+          this.catToAdd = "";
+        } else if (this.catToAdd && !hasCat) {
+          this.categories.unshift(this.catToAdd);
+          this.categories[0].description = moment().format("ddd, MMM Do, YYYY");
           this.catToAdd = "";
         }
       } else {
@@ -212,22 +231,37 @@ export default {
     },
     setCategories() {
       // console.log("setCategories ran: " + this.menuItems);
+      let saveSpecial = {};
+      let isSpecial = false;
       if (this.menuItems && this.menuItems.length > 1) {
         for (let idx = 0; idx < this.menuItems.length; idx++) {
           let hasCat = this.categories.some(c => {
             return c.name === this.menuItems[idx].category.name;
           });
-          if (!hasCat) {
+          if (this.menuItems[idx].category.name.toLowerCase() === "specials") {
+            isSpecial = true;
+            saveSpecial = this.menuItems[idx].category;
+            saveSpecial.description = moment().format("ddd, MMM Do, YYYY");
+          }
+          if (!hasCat && !isSpecial) {
             this.categories.push(this.menuItems[idx].category);
           }
+          if (!hasCat && isSpecial) {
+            this.categories.unshift(saveSpecial);
+          }
         }
+
+        // if (saveSpecial.name !== null) {
+        //   this.categories.unshift(saveSpecial);
+        // }
       }
     }
   },
   async created() {
     this.isLoading = true;
-    //this.getMenuItemsStatic();
-    await this.setMenuItems();
+    await this.getMenuItemsStatic();
+
+    //await this.setMenuItems();
     this.isLoading = false;
   }
 };
