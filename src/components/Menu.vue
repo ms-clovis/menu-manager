@@ -145,8 +145,7 @@ export default {
         .then(data => {
           this.menuItems = data;
 
-          this.saveMenu();
-          this.setCategories();
+          // this.saveMenu();
         })
         .catch(err => console.log(err));
       this.isLoading = false;
@@ -154,8 +153,8 @@ export default {
     async saveMenu() {
       AWSMenuService.saveMenu({ menuItems: this.menuItems })
         .then(response => {
-          // console.log("AWS data: ");
-          // console.log(response.data.menuItems);
+          //console.log("AWS data: ");
+          //console.log(response.data.menuItems);
           this.menuItems = response.data.menuItems;
         })
         .catch(err => console.log(err));
@@ -216,6 +215,7 @@ export default {
       }
     },
     addMenuItem(menuItem) {
+      console.log("ADDING MENU ITEM");
       let alreadyStored = this.menuItems.some(mi => {
         return (
           menuItem.name.toLowerCase() === mi.name.toLowerCase() &&
@@ -223,7 +223,6 @@ export default {
         );
       });
       if (!alreadyStored) {
-        //todo add ID addition to menuItem
         menuItem.id = this.getMaxMenuItemID() + 1;
         this.menuItems.push(menuItem);
         this.saveMenu();
@@ -282,7 +281,13 @@ export default {
           let hasCat = this.categories.some(c => {
             return c.name === this.menuItems[idx].category.name;
           });
-          if (this.menuItems[idx].category.name.toLowerCase() === "specials") {
+          if (
+            this.menuItems[idx].category.name.toLowerCase().indexOf("special") >
+            0
+          ) {
+            // const mi = this.menuItems[idx];
+            // this.menuItems.splice(idx, 1);
+            // this.menuItems.unshift(mi);
             isSpecial = true;
             saveSpecial = this.menuItems[idx].category;
             saveSpecial.description = moment().format("ddd, MMM Do, YYYY");
@@ -300,7 +305,7 @@ export default {
   async created() {
     this.isLoading = true;
     await this.getMenuItemsStatic();
-
+    await this.setCategories();
     //await this.setMenuItems();
     this.isLoading = false;
   }
