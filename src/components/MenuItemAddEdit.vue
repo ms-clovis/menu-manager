@@ -15,20 +15,17 @@
       </label>
       &nbsp;
       <label>
-        Name:
         <input type="text" v-model="menuItem.name" placeholder="Name" />
       </label>
       &nbsp;
       <label>
-        Price:
         <input
           type="number"
           v-model.number="menuItem.price"
           placeholder="Price"
         />
       </label>
-      <label
-        >Description:
+      <label>
         <input
           type="text"
           v-model="menuItem.description"

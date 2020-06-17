@@ -1,10 +1,9 @@
 <template>
   <div class="menuItem row">
     <div class="col-12" style="margin: 5px" @click="setSelectedItem">
-      <span class="menuName" v-if="menuItem.name">{{ menuItem.name }}</span
-      >{{ fixDashes() }}
+      <span class="menuName" v-if="menuItem.name">{{ menuItem.name }}</span>
       <span class="menuPrice" v-if="menuItem.price"
-        >${{ menuItem.price.toFixed(2) }}
+        >{{ fixDashes() }}${{ menuItem.price.toFixed(2) }}
       </span>
       <i
         class="fal fa-times-octagon"

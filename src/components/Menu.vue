@@ -15,8 +15,16 @@
     </div>
     <div class="row">
       <div class="category col-12" v-for="cat in categories" :key="cat.name">
-        <h2 @click="editCat(cat)">{{ cat.name }}</h2>
+        <h2 @click="editCat(cat)">
+          {{ cat.name
+          }}<i
+            class="fal fa-times-octagon"
+            @click="deleteCategory(cat)"
+            v-if="isAdmin"
+          ></i>
+        </h2>
         <h6>{{ cat.description }}</h6>
+
         <div class="row">
           <Item
             @SelItem="setSelectedItem"
@@ -49,6 +57,7 @@
         <button class="btn btn-primary" @click="addCategory">
           {{ addEditCat }} Category
         </button>
+        &nbsp;
         <button class="btn btn-success" @click="clearCat">Clear</button>
       </div>
     </div>
@@ -107,6 +116,19 @@ export default {
     }
   },
   methods: {
+    deleteCategory(cat) {
+      const idx = this.categories.findIndex(c => {
+        return c.name === cat.name;
+      });
+      this.categories.splice(idx, 1);
+      for (let i = 0; i < this.menuItems.length; i++) {
+        if (this.menuItems[i].category.name === cat.name) {
+          this.menuItems.splice(i, 1);
+          i--;
+        }
+      }
+      this.saveMenu();
+    },
     clearCat() {
       this.catToAdd = Category.newCategory();
       this.addEditCat = "Add";
@@ -123,17 +145,20 @@ export default {
         .then(data => {
           this.menuItems = data;
 
-          AWSMenuService.saveMenu({ menuItems: this.menuItems })
-            .then(response => {
-              // console.log("AWS data: ");
-              // console.log(response.data.menuItems);
-              this.menuItems = response.data.menuItems;
-            })
-            .catch(err => console.log(err));
+          this.saveMenu();
           this.setCategories();
         })
         .catch(err => console.log(err));
       this.isLoading = false;
+    },
+    async saveMenu() {
+      AWSMenuService.saveMenu({ menuItems: this.menuItems })
+        .then(response => {
+          // console.log("AWS data: ");
+          // console.log(response.data.menuItems);
+          this.menuItems = response.data.menuItems;
+        })
+        .catch(err => console.log(err));
     },
 
     async setMenuItems() {
@@ -158,6 +183,13 @@ export default {
           !hasCat &&
           !this.catToAdd.name.toLowerCase().includes("specials")
         ) {
+          let maxCatID = 0;
+          this.categories.forEach(c => {
+            if (c.id > maxCatID) {
+              maxCatID = c.id;
+            }
+          });
+          this.catToAdd.id = maxCatID + 1;
           this.categories.push(this.catToAdd);
           this.catToAdd = "";
         } else if (this.catToAdd && !hasCat) {
@@ -171,15 +203,11 @@ export default {
           let menuItem = newMenuItems[idx];
           if (menuItem.category.id === this.catToAdd.id) {
             menuItem.category = this.catToAdd;
-            MenuService.editMenuItem(menuItem)
-              .then(response => {
-                menuItem = response.data;
-                this.catToAdd = Category.newCategory();
-                this.addEditCat = "Add";
-              })
-              .catch(err => console.log(err));
+            this.menuItems.push(menuItem);
           }
         }
+        this.saveMenu();
+        this.catToAdd = Category.newCategory();
       }
     },
     swapIsAdmin() {
@@ -195,33 +223,49 @@ export default {
         );
       });
       if (!alreadyStored) {
-        MenuService.saveMenuItem(menuItem)
-          .then(response => {
-            this.menuItems.push(response.data);
-          })
-          .catch(err => console.log(err));
+        //todo add ID addition to menuItem
+        menuItem.id = this.getMaxMenuItemID() + 1;
+        this.menuItems.push(menuItem);
+        this.saveMenu();
+        // MenuService.saveMenuItem(menuItem)
+        //   .then(response => {
+        //     this.menuItems.push(response.data);
+        //   })
+        //   .catch(err => console.log(err));
       }
+    },
+    getMaxMenuItemID() {
+      let maxID = 0;
+      this.menuItems.forEach(mi => {
+        if (mi.id > maxID) {
+          maxID = mi.id;
+        }
+      });
+      return maxID;
     },
     resetMenuItem() {
       this.selectedMenuItem = MenuItem.newMenuItem();
     },
     editMenuItem(menuItem) {
-      MenuService.editMenuItem(menuItem)
-        .then(() => {})
-        .catch(err => console.log(err));
+      const idx = this.menuItems.findIndex(mi => {
+        return mi.id === menuItem.id;
+      });
+      this.menuItems.splice(idx, 1);
+      this.menuItems.push(menuItem);
+      this.saveMenu();
+      // MenuService.editMenuItem(menuItem)
+      //   .then(() => {})
+      //   .catch(err => console.log(err));
     },
     setSelectedItem(menuItem) {
       this.selectedMenuItem = menuItem;
     },
     deleteMenuItem(menuItem) {
-      MenuService.deleteMenuItem(menuItem.id)
-        .then(() => {
-          const idx = this.menuItems.findIndex(mi => {
-            return mi.id === menuItem.id;
-          });
-          this.menuItems.splice(idx, 1);
-        })
-        .catch(err => console.log(err));
+      const idx = this.menuItems.findIndex(mi => {
+        return mi.id === menuItem.id;
+      });
+      this.menuItems.splice(idx, 1);
+      this.saveMenu();
     },
 
     filteredMenuItems(category) {
@@ -250,10 +294,6 @@ export default {
             this.categories.unshift(saveSpecial);
           }
         }
-
-        // if (saveSpecial.name !== null) {
-        //   this.categories.unshift(saveSpecial);
-        // }
       }
     }
   },
