@@ -1,0 +1,12 @@
+1) Change Base URL in AWSMenuService.js (see step 9)
+2) Change Title in Menu.vue
+3) Change Business name and phone number in Menu.vue
+4) Create web address in AWS S3 bucket
+5) Create Cloudfront with S3 Bucket as Origin
+6) Create SSL Cert for Cloudfront (owner must accept email)
+7) Set Route 53 for domain to cloudfront ( alias )
+8) Create NS (Name server) record set for domain (prior to alias)
+9) Create Lambda from menuManager lambda changing bucketName (domain) and cfName CloudFront ID
+10) Test
+
+
