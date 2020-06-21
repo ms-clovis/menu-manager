@@ -7,6 +7,8 @@
 7) Set Route 53 for domain to cloudfront ( alias )
 8) Create NS (Name server) record set for domain (prior to alias)
 9) Create Lambda from menuManager lambda changing bucketName (domain) and cfName CloudFront ID
-10) Test
+10) Create Api gateway (post) endpoint (/menu) and attach to lambda
+11) add Cache-control header max-age=0 to menu.json in bucket
+12) Set behavior in Cloudfront to not cache (set ttl to 0)
 
 

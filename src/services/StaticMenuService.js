@@ -32,6 +32,7 @@ export class StaticMenuService {
     //     // ).menuItems;
     // http://holdinghandsdemo.net
     try {
+      $.ajaxSetup({ cache: false });
       await $.getJSON("/menu.json", data => {
         //console.log(data.menuItems);
         this.menuItems = data.menuItems;

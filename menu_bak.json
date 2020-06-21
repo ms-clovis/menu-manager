@@ -4,7 +4,9 @@
       "id": 1,
       "category": {
         "id": 1,
-        "name": "Soups & Salads"
+        "name": "Soups & Salads",
+        "description": "Homemade",
+        "addendum": "Choice of Dressings: Catalina, Thousand Island, Honey Mustard, Ranch, Blue Cheese, Oil & Vinegar, Caesar, Creamy Italian"
       },
       "name": "Home Made Chili",
       "price": 4.5
@@ -13,7 +15,9 @@
       "id": 2,
       "category": {
         "id": 1,
-        "name": "Soups & Salads"
+        "name": "Soups & Salads",
+        "description": "Homemade",
+        "addendum": "Choice of Dressings: Catalina, Thousand Island, Honey Mustard, Ranch, Blue Cheese, Oil & Vinegar, Caesar, Creamy Italian"
       },
       "name": "Home Made French Onion Soup",
       "price": 4.5
@@ -21,7 +25,9 @@
     {
       "category": {
         "id": 1,
-        "name": "Soups & Salads"
+        "name": "Soups & Salads",
+        "description": "Homemade",
+        "addendum": "Choice of Dressings: Catalina, Thousand Island, Honey Mustard, Ranch, Blue Cheese, Oil & Vinegar, Caesar, Creamy Italian"
       },
       "name": "House Salad",
       "price": 3.99,
@@ -30,7 +36,9 @@
     {
       "category": {
         "id": 1,
-        "name": "Soups & Salads"
+        "name": "Soups & Salads",
+        "description": "Homemade",
+        "addendum": "Choice of Dressings: Catalina, Thousand Island, Honey Mustard, Ranch, Blue Cheese, Oil & Vinegar, Caesar, Creamy Italian"
       },
       "name": "Chef Salad",
       "price": 7.99,
@@ -39,7 +47,9 @@
     {
       "category": {
         "id": 1,
-        "name": "Soups & Salads"
+        "name": "Soups & Salads",
+        "description": "Homemade",
+        "addendum": "Choice of Dressings: Catalina, Thousand Island, Honey Mustard, Ranch, Blue Cheese, Oil & Vinegar, Caesar, Creamy Italian"
       },
       "name": "Tuna Salad Platter",
       "price": 6.99,
@@ -48,7 +58,9 @@
     {
       "category": {
         "id": 2,
-        "name": "Hot and Cold Sandwiches"
+        "name": "Hot and Cold Sandwiches",
+        "description": "Choice of Fresh Bread or Rolls",
+        "addendum": "White, Wheat, Rye, or Kaiser Roll"
       },
       "name": "Tuna Salad Sandwich",
       "price": 4.99,
@@ -57,7 +69,9 @@
     {
       "category": {
         "id": 2,
-        "name": "Hot and Cold Sandwiches"
+        "name": "Hot and Cold Sandwiches",
+        "description": "Choice of Fresh Bread or Rolls",
+        "addendum": "White, Wheat, Rye, or Kaiser Roll"
       },
       "name": "Egg Salad Sandwich",
       "price": 4.5,
@@ -66,7 +80,9 @@
     {
       "category": {
         "id": 2,
-        "name": "Hot and Cold Sandwiches"
+        "name": "Hot and Cold Sandwiches",
+        "description": "Choice of Fresh Bread or Rolls",
+        "addendum": "White, Wheat, Rye, or Kaiser Roll"
       },
       "name": "Chicken Salad Sandwich",
       "price": 4.99,
@@ -75,7 +91,9 @@
     {
       "category": {
         "id": 2,
-        "name": "Hot and Cold Sandwiches"
+        "name": "Hot and Cold Sandwiches",
+        "description": "Choice of Fresh Bread or Rolls",
+        "addendum": "White, Wheat, Rye, or Kaiser Roll"
       },
       "name": "Grilled Cheese",
       "price": 3.99,
@@ -84,7 +102,9 @@
     {
       "category": {
         "id": 2,
-        "name": "Hot and Cold Sandwiches"
+        "name": "Hot and Cold Sandwiches",
+        "description": "Choice of Fresh Bread or Rolls",
+        "addendum": "White, Wheat, Rye, or Kaiser Roll"
       },
       "name": "Grilled Ham & Cheese",
       "price": 5.5,
@@ -156,7 +176,9 @@
     {
       "category": {
         "id": 4,
-        "name": "Buffalo Wings"
+        "name": "Buffalo Wings",
+        "description": "Mild, Hot, Masochistic, BBQ, Jack Daniels, Honey Mustard, Honey, Cajun, Caribbean Jerk, Teriyaki,  Ranch, Garlic Parmesan, or Sweat & Spicy Plum",
+        "addendum": "Served with Blue Cheese & Celery"
       },
       "name": "One LB.",
       "price": 8.49,
@@ -165,7 +187,9 @@
     {
       "category": {
         "id": 4,
-        "name": "Buffalo Wings"
+        "name": "Buffalo Wings",
+        "description": "Mild, Hot, Masochistic, BBQ, Jack Daniels, Honey Mustard, Honey, Cajun, Caribbean Jerk, Teriyaki,  Ranch, Garlic Parmesan, or Sweat & Spicy Plum",
+        "addendum": "Served with Blue Cheese & Celery"
       },
       "name": "Three LBs.",
       "price": 22.99,
@@ -174,7 +198,9 @@
     {
       "category": {
         "id": 4,
-        "name": "Buffalo Wings"
+        "name": "Buffalo Wings",
+        "description": "Mild, Hot, Masochistic, BBQ, Jack Daniels, Honey Mustard, Honey, Cajun, Caribbean Jerk, Teriyaki,  Ranch, Garlic Parmesan, or Sweat & Spicy Plum",
+        "addendum": "Served with Blue Cheese & Celery"
       },
       "name": "Five LBs.",
       "price": 36.99,
@@ -183,7 +209,9 @@
     {
       "category": {
         "id": 4,
-        "name": "Buffalo Wings"
+        "name": "Buffalo Wings",
+        "description": "Mild, Hot, Masochistic, BBQ, Jack Daniels, Honey Mustard, Honey, Cajun, Caribbean Jerk, Teriyaki,  Ranch, Garlic Parmesan, or Sweat & Spicy Plum",
+        "addendum": "Served with Blue Cheese & Celery"
       },
       "name": "Ten LBs.",
       "price": 72.99,
@@ -255,7 +283,8 @@
     {
       "category": {
         "id": 6,
-        "name": "Half LB. Philly CheeseSteaks"
+        "name": "Half LB. Philly CheeseSteaks",
+        "addendum": "Available as Chicken Cheese steak or Wraps!"
       },
       "name": "CheeseSteak",
       "price": 6.99,
@@ -264,7 +293,8 @@
     {
       "category": {
         "id": 6,
-        "name": "Half LB. Philly CheeseSteaks"
+        "name": "Half LB. Philly CheeseSteaks",
+        "addendum": "Available as Chicken Cheese steak or Wraps!"
       },
       "name": "Weber",
       "price": 7.5,
@@ -273,7 +303,8 @@
     {
       "category": {
         "id": 6,
-        "name": "Half LB. Philly CheeseSteaks"
+        "name": "Half LB. Philly CheeseSteaks",
+        "addendum": "Available as Chicken Cheese steak or Wraps!"
       },
       "name": "Trum Signature CheeseSteak",
       "price": 7.99,
@@ -282,7 +313,8 @@
     {
       "category": {
         "id": 6,
-        "name": "Half LB. Philly CheeseSteaks"
+        "name": "Half LB. Philly CheeseSteaks",
+        "addendum": "Available as Chicken Cheese steak or Wraps!"
       },
       "name": "Pepperoni Pizza CheeseSteak",
       "price": 7.99,
@@ -291,7 +323,8 @@
     {
       "category": {
         "id": 6,
-        "name": "Half LB. Philly CheeseSteaks"
+        "name": "Half LB. Philly CheeseSteaks",
+        "addendum": "Available as Chicken Cheese steak or Wraps!"
       },
       "name": "Mushroom Cheddar CheeseSteak ",
       "price": 7.5,
@@ -363,7 +396,8 @@
     {
       "category": {
         "id": 6,
-        "name": "Half LB. Philly CheeseSteaks"
+        "name": "Half LB. Philly CheeseSteaks",
+        "addendum": "Available as Chicken Cheese steak or Wraps!"
       },
       "name": "Royal CheeseSteak",
       "price": 7.5,
@@ -543,7 +577,9 @@
     {
       "category": {
         "id": 10,
-        "name": "Hoagies"
+        "name": "Hoagies",
+        "description": "Choice of Hoagie Roll or Fresh Bread - white, wheat, rye, or kaiser roll",
+        "addendum": "Please specify oil & vinegar or mayo"
       },
       "name": "Three Cheese Hoagie",
       "price": 5.5,
@@ -552,7 +588,9 @@
     {
       "category": {
         "id": 10,
-        "name": "Hoagies"
+        "name": "Hoagies",
+        "description": "Choice of Hoagie Roll or Fresh Bread - white, wheat, rye, or kaiser roll",
+        "addendum": "Please specify oil & vinegar or mayo"
       },
       "name": "Ham & Cheese",
       "price": 5.99,
@@ -561,7 +599,9 @@
     {
       "category": {
         "id": 10,
-        "name": "Hoagies"
+        "name": "Hoagies",
+        "description": "Choice of Hoagie Roll or Fresh Bread - white, wheat, rye, or kaiser roll",
+        "addendum": "Please specify oil & vinegar or mayo"
       },
       "name": "Italian Hoagie",
       "price": 5.99,
@@ -570,7 +610,9 @@
     {
       "category": {
         "id": 10,
-        "name": "Hoagies"
+        "name": "Hoagies",
+        "description": "Choice of Hoagie Roll or Fresh Bread - white, wheat, rye, or kaiser roll",
+        "addendum": "Please specify oil & vinegar or mayo"
       },
       "name": "Turkey & Cheese",
       "price": 5.99,
@@ -579,7 +621,9 @@
     {
       "category": {
         "id": 10,
-        "name": "Hoagies"
+        "name": "Hoagies",
+        "description": "Choice of Hoagie Roll or Fresh Bread - white, wheat, rye, or kaiser roll",
+        "addendum": "Please specify oil & vinegar or mayo"
       },
       "name": "Roast Beef & Cheese",
       "price": 6.99,
@@ -588,7 +632,9 @@
     {
       "category": {
         "id": 10,
-        "name": "Hoagies"
+        "name": "Hoagies",
+        "description": "Choice of Hoagie Roll or Fresh Bread - white, wheat, rye, or kaiser roll",
+        "addendum": "Please specify oil & vinegar or mayo"
       },
       "name": "Ham or Turkey Club",
       "price": 6.99,
@@ -597,7 +643,9 @@
     {
       "category": {
         "id": 10,
-        "name": "Hoagies"
+        "name": "Hoagies",
+        "description": "Choice of Hoagie Roll or Fresh Bread - white, wheat, rye, or kaiser roll",
+        "addendum": "Please specify oil & vinegar or mayo"
       },
       "name": "Roast Beef Club",
       "price": 7.99,
@@ -606,7 +654,8 @@
     {
       "category": {
         "id": 11,
-        "name": "Platters"
+        "name": "Platters",
+        "addendum": "served with Fries and Coleslaw"
       },
       "name": "Meatloaf",
       "price": 8.99,
@@ -615,7 +664,8 @@
     {
       "category": {
         "id": 11,
-        "name": "Platters"
+        "name": "Platters",
+        "addendum": "served with Fries and Coleslaw"
       },
       "name": "French Dip",
       "price": 8.99,
@@ -624,7 +674,8 @@
     {
       "category": {
         "id": 11,
-        "name": "Platters"
+        "name": "Platters",
+        "addendum": "served with Fries and Coleslaw"
       },
       "name": "Chicken Fingers",
       "price": 7.99,
@@ -633,7 +684,8 @@
     {
       "category": {
         "id": 11,
-        "name": "Platters"
+        "name": "Platters",
+        "addendum": "served with Fries and Coleslaw"
       },
       "name": "Country Fried Chicken",
       "price": 8.99,
@@ -642,11 +694,60 @@
     {
       "category": {
         "id": 11,
-        "name": "Platters"
+        "name": "Platters",
+        "addendum": "served with Fries and Coleslaw"
       },
       "name": "Fish & Chips",
       "price": 7.99,
       "id": 69
+    },
+    {
+      "category": {
+        "id": 4,
+        "name": "Buffalo Wings",
+        "description": "Mild, Hot, Masochistic, BBQ, Jack Daniels, Honey Mustard, Honey, Cajun, Caribbean Jerk, Teriyaki,  Ranch, Garlic Parmesan, or Sweat & Spicy Plum",
+        "addendum": "Served with Blue Cheese & Celery"
+      },
+      "name": "Trum Super Wings",
+      "price": 5.99,
+      "description": "6 wrapped with Bacon",
+      "id": 76
+    },
+    {
+      "category": {
+        "name": "Tops",
+        "description": "when not included"
+      },
+      "name": "Cheese",
+      "price": 1.25,
+      "id": 77
+    },
+    {
+      "category": {
+        "name": "Tops",
+        "description": "when not included"
+      },
+      "name": "Gravy",
+      "price": 0.99,
+      "id": 78
+    },
+    {
+      "category": {
+        "name": "Tops",
+        "description": "when not included"
+      },
+      "name": "Old Bay",
+      "price": 0.5,
+      "id": 79
+    },
+    {
+      "category": {
+        "name": "Tops",
+        "description": "when not included"
+      },
+      "name": "Trum Seasoning",
+      "price": 0.5,
+      "id": 80
     }
   ]
 }

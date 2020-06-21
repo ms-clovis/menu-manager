@@ -180,7 +180,7 @@ export default {
         if (
           this.catToAdd &&
           !hasCat &&
-          !this.catToAdd.name.toLowerCase().includes("specials")
+          !this.catToAdd.name.toLowerCase().indexOf("special") > 0
         ) {
           let maxCatID = 0;
           this.categories.forEach(c => {
@@ -278,12 +278,15 @@ export default {
       let isSpecial = false;
       if (this.menuItems && this.menuItems.length > 1) {
         for (let idx = 0; idx < this.menuItems.length; idx++) {
+          isSpecial = false;
+          saveSpecial = {};
           let hasCat = this.categories.some(c => {
             return c.name === this.menuItems[idx].category.name;
           });
           if (
             this.menuItems[idx].category.name.toLowerCase().indexOf("special") >
-            0
+              0 &&
+            !hasCat
           ) {
             // const mi = this.menuItems[idx];
             // this.menuItems.splice(idx, 1);
