@@ -182,27 +182,25 @@ export default {
           !hasCat &&
           !this.catToAdd.name.toLowerCase().indexOf("special") > 0
         ) {
-          let maxCatID = 0;
-          this.categories.forEach(c => {
-            if (c.id > maxCatID) {
-              maxCatID = c.id;
-            }
-          });
+          let maxCatID = this.getMaxCatID();
           this.catToAdd.id = maxCatID + 1;
           this.categories.push(this.catToAdd);
           this.catToAdd = "";
         } else if (this.catToAdd && !hasCat) {
+          this.catToAdd.id = this.getMaxCatID() + 1;
           this.categories.unshift(this.catToAdd);
           this.categories[0].description = moment().format("ddd, MMM Do, YYYY");
           this.catToAdd = "";
         }
       } else {
-        let newMenuItems = [...this.menuItems];
-        for (let idx = 0; idx < newMenuItems.length; idx++) {
-          let menuItem = newMenuItems[idx];
-          if (menuItem.category.id === this.catToAdd.id) {
-            menuItem.category = this.catToAdd;
-            this.menuItems.push(menuItem);
+        //let newMenuItems = [...this.menuItems];
+        for (let idx = 0; idx < this.menuItems.length; idx++) {
+          //let menuItem = this.menuItems[idx];
+          if (this.menuItems[idx].category.id === this.catToAdd.id) {
+            this.menuItems[idx].category = this.catToAdd;
+            // menuItem.category = this.catToAdd;
+            // this.menuItems.splice(idx, 1);
+            // this.menuItems.push(menuItem);
           }
         }
         this.saveMenu();
@@ -232,6 +230,15 @@ export default {
         //   })
         //   .catch(err => console.log(err));
       }
+    },
+    getMaxCatID() {
+      let maxCatID = 0;
+      this.categories.forEach(c => {
+        if (c.id > maxCatID) {
+          maxCatID = c.id;
+        }
+      });
+      return maxCatID;
     },
     getMaxMenuItemID() {
       let maxID = 0;

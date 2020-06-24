@@ -1,4 +1,4 @@
-1) Change Base URL in AWSMenuService.js (see step 9)
+1) Change Base URL in AWSMenuService.js (see step 9) to later api gateway endpoint
 2) Change Title in Menu.vue
 3) Change Business name and phone number in Menu.vue
 4) Create web address in AWS S3 bucket
