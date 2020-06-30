@@ -1,51 +1,53 @@
 <template>
-  <div class="row">
-    <div class="col-12">
-      <label
-        >Category:
-        <select
-          v-if="categories && categories.length > 0"
-          v-model="menuItem.category"
+  <div class="row ">
+    <div style="border: solid 2px black">
+      <div class="col-12">
+        <label
+          >Category:
+          <select
+            v-if="categories && categories.length > 0"
+            v-model="menuItem.category"
+          >
+            <option value="" selected></option>
+            <option :key="idx" v-for="(cat, idx) in categories" :value="cat">
+              {{ cat.name }}
+            </option>
+          </select>
+        </label>
+        &nbsp;
+        <label>
+          <input type="text" v-model="menuItem.name" placeholder="Name" />
+        </label>
+        &nbsp;
+        <label>
+          <input
+            type="number"
+            v-model.number="menuItem.price"
+            placeholder="Price"
+          />
+        </label>
+        <label>
+          <input
+            type="text"
+            v-model="menuItem.description"
+            placeholder="Description"
+          />
+        </label>
+        <button
+          style="margin: 1em"
+          class="btn btn-primary"
+          @click="addEditMenuItem"
         >
-          <option value="" selected></option>
-          <option :key="idx" v-for="(cat, idx) in categories" :value="cat">
-            {{ cat.name }}
-          </option>
-        </select>
-      </label>
-      &nbsp;
-      <label>
-        <input type="text" v-model="menuItem.name" placeholder="Name" />
-      </label>
-      &nbsp;
-      <label>
-        <input
-          type="number"
-          v-model.number="menuItem.price"
-          placeholder="Price"
-        />
-      </label>
-      <label>
-        <input
-          type="text"
-          v-model="menuItem.description"
-          placeholder="Description"
-        />
-      </label>
-      <button
-        style="margin: 1em"
-        class="btn btn-primary"
-        @click="addEditMenuItem"
-      >
-        {{ buttonText }}
-      </button>
-      <button
-        style="margin: 1em"
-        class="btn btn-success"
-        @click="resetMenuItem"
-      >
-        Clear
-      </button>
+          {{ buttonText }}
+        </button>
+        <button
+          style="margin: 1em"
+          class="btn btn-success"
+          @click="resetMenuItem"
+        >
+          Clear Menu Item
+        </button>
+      </div>
     </div>
   </div>
 </template>

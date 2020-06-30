@@ -38,7 +38,7 @@
         <h6>{{ cat.addendum }}</h6>
       </div>
     </div>
-    <div class="row" v-if="isAdmin">
+    <div class="row" style="border: solid 2px black" v-if="isAdmin">
       <div class="col-12">
         <label>
           New Category:
@@ -58,7 +58,9 @@
           {{ addEditCat }} Category
         </button>
         &nbsp;
-        <button class="btn btn-success" @click="clearCat">Clear</button>
+        <button class="btn btn-success" @click="clearCat">
+          Clear Category
+        </button>
       </div>
     </div>
     <div class="row">
